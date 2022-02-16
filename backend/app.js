@@ -17,8 +17,8 @@ app.post("/address-data", async (req, res, next) => {
 
     try {
 
-        const { address, amount } = req.body;
-        const data = { address, amount };
+        const { address, balance } = req.body;
+        const data = { address, balance };
 
         const db = mongoDb.getDb();
         await db.collection("addresses").insertOne(data);

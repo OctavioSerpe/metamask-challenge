@@ -28,7 +28,7 @@ async function closeConnection() {
     await _client.close();
     return;
   }
-  throw new Error("MongoDb: No connection was found!");
+  throw new Error("MongoDb: No connection found!");
 }
 
 module.exports = {
