@@ -1,10 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 
-// const mongoDb = require("./mongodb");
+const mongoDb = require("./mongodb");
 
 app.use(bodyParser.json());
+
+const corsOptions = {
+    origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
 
 app.post("/address-data", async (req, res, next) => {
 
@@ -13,9 +20,10 @@ app.post("/address-data", async (req, res, next) => {
         const { address, amount } = req.body;
         const data = { address, amount };
 
-        await db.collection("metamask").insertOne(data);
+        const db = mongoDb.getDb();
+        await db.collection("addresses").insertOne(data);
 
-        res.json(data);
+        res.status(201).json(data);
     } catch (err) {
         next(err);
     }
@@ -33,7 +41,7 @@ app.use((error, req, res, next) => {
     res.status(status).json({ message });
 });
 
-// mongoDb.connect();
+mongoDb.connect();
 
 const port = 5000;
 

@@ -4,7 +4,7 @@ let _db;
 let _client;
 
 function connect(){
-  return MongoClient.connect("URI")
+  return MongoClient.connect("mongodb+srv://admin:admin@main-cluster.eeb3j.mongodb.net/metamask-data?retryWrites=true&w=majority")
     .then(client => {
       console.log("MongoDb: Connected!");
       _client = client;
