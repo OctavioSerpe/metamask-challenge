@@ -5,13 +5,13 @@ Build a backend with Nodejs.
 
 The frontend must have different features
 - login with Metamask
-- display account address and it´s balance
-- save account address and it´s balance sending them to the backend
+- display account address and it's balance
+- save account address and it's balance sending them to the backend
 - support Rinkeby Test Network
 
 The backend must have different features
 - connect to a Mongodb database
-- offer a POST endpoint to save account address and it´s balance to the Mongodb instance
+- offer a POST endpoint to save account address and it's balance to the Mongodb instance
 
 Another requirement is to make an Ethereum faucet to test the web.
 
@@ -19,18 +19,18 @@ Another requirement is to make an Ethereum faucet to test the web.
 ## Backend
 From the root of the project run
 ```
-cd backend
-npm i
-npm run dev
+$ cd backend
+$ npm i
+$ npm run dev
 ```
 The backend is going to run on port 5000 (if available).
 
 ## Frontend
 From the root of the project run
 ```
-cd frontend
-npm i
-npm start
+$ cd frontend
+$ npm i
+$ npm start
 ```
 The frontend is going to run on port 3000 (if available).
 
